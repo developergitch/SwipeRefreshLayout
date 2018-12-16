@@ -1,7 +1,7 @@
-### SwipeRefresh 支持单个View 的下拉刷新以及上拉加载
-### SwipeNest 滚动视图（支持各种 普通View recycleView scrollView listView等 混合排列） 处理滚动冲突  附带下拉刷新以及上拉加载
-### MultipleListAdapter<T> 简单快速实现 ListView 多种类型展示
-### MultipleRecycleAdapter<T>  简单快速实现  RecycleView多种类型展示 
+### SwipeRefresh supports pull-down refresh and pull-up loading for a single View
+### SwipeNest scroll view (supports various common View recycleView scrollView listView and other mixed arrangements) Handling scrolling conflicts With pull-down refresh and pull-up loading
+### MultipleListAdapter<T> Simple and fast implementation of ListView multiple types of display
+### MultipleRecycleAdapter<T> Simple and fast implementation RecycleView multiple types of display
 
 Add Gradle dependency:
 ```gradle
@@ -13,14 +13,14 @@ dependencies {
 
 ### SwipeRefresh UI
 
-|刷新（可自定义）|下拉加载获取新数据(可自定义)|上拉加载数据全部获得(可自定义)|
+|Refresh (customizable)|Launch load to get new data (customizable)|Upload and load data are all available (customizable)|
 |---|---|----
 |![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/refresh_pre.gif)|![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/refresh_load_2.gif)|![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/refresh_load_1.gif)|
 
 
 ### SwipeNest UI
 
-|刷新（可自定义）|平滑各种View之间的滚动冲突|自定义刷新范例|
+|Refresh (customizable)|Smooth scrolling conflicts between various Views|Custom refresh example|
 |---|---|----
 |![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/nest_pre.gif)|![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/nest_pre_1.gif)|![github](https://github.com/powyin/nest-scroll/blob/master/app/src/main/res/raw/nest_pre_2.gif)|
 
@@ -52,35 +52,35 @@ ISwipe
         ISwipe.setOnRefreshListener(new SwipeRefresh.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                // 开始下拉刷新
+                // Start pull-down refresh
             }
 
             @Override
             public void onLoading(boolen isLoadViewShow) {
-                // 开始加载更多
+                // Start loading more
             }
         });
         
-        ISwipe.setFreshStatue(ISwip.RreshStatus.SUCCESS);             //下拉刷新 完成
-        ISwipe.setFreshStatue(ISwipe.RreshStatus.ERROR);              //下拉刷新 失败
+        ISwipe.setFreshStatue(ISwip.RreshStatus.SUCCESS);             //Pulldown refresh complete
+        ISwipe.setFreshStatue(ISwipe.RreshStatus.ERROR);              //Pulldown refresh failed
  
         
         
-### SwipeRefresh设置刷新模式
+### SwipeRefresh set refresh mode
 
 ```
 ISwipe.setSwipeModel(SwipeControl.SwipeModel model)
-(BOTH = SwipeModel.SWIPE_BOTH)                    同时支持下拉刷新与上拉加载  
-(ONLY_REFRESH == SwipeModel.SWIPE_ONLY_REFRESH))  只支持下拉刷新 
-(ONLY_REFRESH == SwipeModel.SWIPE_ONLY_LOADINN)   只支持上拉加载 
-(SWIPE_NONE == SwipeModel.SWIPE_NONE）            都不支持
+(BOTH = SwipeModel.SWIPE_BOTH)                    Support for pull-down refresh and pull-up loading 
+(ONLY_REFRESH == SwipeModel.SWIPE_ONLY_REFRESH))  Only pull-down refresh
+(ONLY_REFRESH == SwipeModel.SWIPE_ONLY_LOADINN)   Only pull-up loading is supported 
+(SWIPE_NONE == SwipeModel.SWIPE_NONE）           Not supported
 ```
 
 
 ### MultipleRecycleAdapter&MultipleListAdapter&MultipleViewPageAdapter
 ```     
-PowViewHolder<T> 此类抽象出获取ListAdapter.Item 与Recycle.Adapter.Item 与PagerAdapter.Item的必须条件;
-使用时必须确定泛型类型;
-AdapterDelegate<T> 此接口定义了 ListAdapter 与 RecycleView.Adatper 与 PagerAdapter 公共数据操作;
+PowViewHolder<T> This class abstracts the necessary conditions for getting ListAdapter.Item and Recycle.Adapter.Item and PagerAdapter.Item;
+The generic type must be determined when using it;
+AdapterDelegate<T> This interface defines the ListAdapter and RecycleView.Adatper and PagerAdapter public data operations;
 ```        
         
