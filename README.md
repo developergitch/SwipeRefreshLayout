@@ -45,7 +45,7 @@ dependencies {
     </com.powyin.scroll.widget.SwipeNest>
 ```
 
-### 设置刷新监听与刷新结果处理
+### Set refresh listener and refresh result processing
 
 ISwipe
 
